@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	n = atoi(globe.arg);
 
-	if (globe.s_q_switch == 1)
+	if (globe.q_s_alt == 1)
 		add_dnodeint(stack, n);
 	else
 		add_dnodeint_end(stack, n);
@@ -68,7 +68,7 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	(void)line_nember;
+	(void)line_number;
 
 	if (*stack == NULL)
 	{
@@ -94,11 +94,11 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		dprintf(2, "L%u: can't pop an empty stack\n", cline);
+		dprintf(2, "L%u: can't pop an empty stack\n", line_number);
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
-	stack = *stack;
+	current = *stack;
 	*stack = (*stack)->next;
 	free(current);
 }
