@@ -38,6 +38,29 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct global_s - this is global struct
+ * @count_line: counts the line
+ * @arg: argument count
+ * buff: the buffer for store instructions
+ * @bytecode_file: file pointer
+ * @head: the head of the list
+ *
+ * Descript: a global variable
+ */
+
+typedef struct global_s
+{
+	int q_s_alt;
+	unsigned int count_line;
+	char *arg;
+	char *buff;
+	FILE bytecode_file;
+	stack_t *head;
+} global_data_t;
+
+extern global_data_t globe;
+
 /* file handle */
 int ini_file(int argc, char **argv);
 FILE *file_open(char *name_f);
@@ -64,7 +87,7 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void mul(stcak_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
