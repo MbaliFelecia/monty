@@ -13,8 +13,8 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (!globe.arg)
 	{
-		dprintf(stderr, "L%u: ", line_number);
-		dprintf(stderr, "usage: push integer\n");
+		dprintf(2, "L%u: ", line_number);
+		dprintf(2, "usage: push integer\n");
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
@@ -23,8 +23,8 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		if (!isdigit(globe.arg[j]) && globe.arg[j] != '-')
 		{
-			dprintf(stderr, "L%u: ", line_number);
-			dprintf(stderr, "usage: push integer\n");
+			dprintf(2, "L%u: ", line_number);
+			dprintf(2, "usage: push integer\n");
 			trm_global();
 			exit(EXIT_FAILURE);
 		}
@@ -72,8 +72,8 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		dprintf(stderr, "L%u: ", line_number);
-		dprintf(stderr, "can't pint, stack empty\n");
+		dprintf(2, "L%u: ", line_number);
+		dprintf(2, "can't pint, stack empty\n");
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
@@ -94,7 +94,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL)
 	{
-		dprintf(stderr, "L%u: can't pop an empty stack\n", cline);
+		dprintf(2, "L%u: can't pop an empty stack\n", cline);
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
@@ -122,7 +122,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 
 	if (m < 2)
 	{
-		dprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		dprintf(2, "L%u: can't swap, stack too short\n", line_number);
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
