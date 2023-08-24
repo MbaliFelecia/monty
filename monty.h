@@ -38,9 +38,21 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* file handle */
+int ini_file(int argc, char **argv);
+FILE *file_open(char *name_f);
+
+/* instruction handle */
+char *rd_line(FILE *bytecode_file);
 
 /* Global variable for the stack head */
+void global_data(void);
+void trm_global(void);
+
 stack_t *stack_head = NULL;
+
+/* function selector */
+void(*get_opcode(char *opc))(stack_t **stack, unsigned int line_number);
 
 /* opcode function */
 void push(stack_t **stack, unsigned int line_number);
