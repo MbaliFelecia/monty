@@ -2,7 +2,7 @@
 
 /**
  * stack - sets the stack
- * @stcak: the head of the stack
+ * @stack: the head of the stack
  * @line_number: number of the line
  */
 
