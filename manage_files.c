@@ -15,9 +15,9 @@ int ini_file(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		return (1);
 	}
-	if (access(argv[1], FILE_OK & READ_OK) != 0)
+	if (access(argv[1], F_OK & R_OK) != 0)
 	{
-		fprint(stderr, "Error: Can't open file  %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file  %s\n", argv[1]);
 		return (1);
 	}
 	return (0);
@@ -34,7 +34,7 @@ FILE *file_open(char *name_f)
 {
 	FILE *fd;
 
-	fd = fopn(name_f, "r");
+	fd = fopen(name_f, "r");
 	if (fd == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", name_f);

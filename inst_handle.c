@@ -11,7 +11,7 @@ char *rd_line(FILE *bytecode_file)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssizte_t real_read;
+	ssize_t real_read;
 
 	real_read = getline(&line, &len, bytecode_file);
 	if (real_read == -1)
