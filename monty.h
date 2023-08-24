@@ -1,8 +1,15 @@
-#ifndef MONTY
-#define MONTY
+#ifndef MONTY_H
+#define MONTY_H
+
+#define _POSIX_C_SOURCE 2000809L
 
 
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <stderr.h>
+#include <string.h>
+#include <ctype.h>
 
 
 /* DATA STRACTURES*/
@@ -55,7 +62,7 @@ typedef struct global_s
 	unsigned int count_line;
 	char *arg;
 	char *buff;
-	FILE bytecode_file;
+	FILE *bytecode_file;
 	stack_t *head;
 } global_data_t;
 
