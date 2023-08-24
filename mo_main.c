@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	
 	bytecode_file = file_open(argv[1]);
-	if (bc_file == NULL)
+	if (bytecode_file == NULL)
 		exit(EXIT_FAILURE);
 
 	global_data();
