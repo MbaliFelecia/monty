@@ -18,7 +18,7 @@ void add(stack_t **stack, unsigned int line_number)
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n = (stack)->n + (*stack)->next->n;
+	(*stack)->next->n = (*stack)->n + (*stack)->next->n;
 	(*stack)->next->prev = NULL;
 	(*stack) = (*stack)->next;
        free(delete_it);
@@ -41,7 +41,7 @@ void mul(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n = (*stack)->n * (*stack)->next->n;
-	(stack)->next->prev = NULL;
+	(*stack)->next->prev = NULL;
 	(*stack) = (*stack)->next;
 	free(delete_it);
 }
@@ -54,7 +54,7 @@ void mul(stack_t **stack, unsigned int line_number)
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
-	stack *delete_it;
+	stack_t *delete_it;
 
 	delete_it = *stack;
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -98,7 +98,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		trm_global();
 		exit(EXIT_FAILURE);
 	}
-	if ((*stack)-> == 0)
+	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		trm_global();
