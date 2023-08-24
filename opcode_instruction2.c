@@ -21,7 +21,7 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = (*stack)->n + (*stack)->next->n;
 	(*stack)->next->prev = NULL;
 	(*stack) = (*stack)->next;
-       free(delete_it);
+	free(delete_it);
 }
 /**
  * mul - mulitplies the two top elements of the stack
@@ -75,7 +75,7 @@ void sub(stack_t **stack, unsigned int line_number)
  * @line_number: the line number
  */
 
-void nope(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
