@@ -19,7 +19,7 @@ void global_data(void)
 
 void trm_global(void)
 {
-	free_dlistint(globe.head);
+	/*free_dlistint(globe.head);*/
 	free(globe.buff);
 	fclose(globe.bytecode_file);
 }

@@ -6,16 +6,16 @@
  *
  * Return: pointer to the function which execites the opcode
  */
-void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number)
+void (*get_opcode(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
-		{"swap", swap},
 		{"queue", queue},
 		{"stack", stack},
+		/*{"swap", swap}
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
@@ -25,7 +25,7 @@ void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
-		{"rotr", rotr},
+		{"rotr", rotr},*/
 		{NULL, NULL}
 	};
 	int i;

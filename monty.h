@@ -79,7 +79,7 @@ char *rd_line(FILE *bytecode_file);
 void global_data(void);
 void trm_global(void);
 
-stack_t *stack_head = NULL;
+/*stack_t *stack_head = NULL;*/
 
 /* function selector */
 void(*get_opcode(char *opc))(stack_t **stack, unsigned int line_number);

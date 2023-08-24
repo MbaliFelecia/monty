@@ -1,7 +1,7 @@
 #include "monty.h"
 
 void global_data(void);
-global_data_t globe_data;
+global_data_t globe;
 
 /**
  * main - receives command line arguments
@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	global_data();
 	globe.bytecode_file = bytecode_file;
 	globe.buff = rd_line(bytecode_file);
+
 	while (globe.buff)
 	{
 		opcode_tokens[0] = strtok(globe.buff, " \t\n");
