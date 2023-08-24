@@ -2,15 +2,17 @@
 
 /**
  * add_dnodeint_end - adds a new node at the end
- * of a dlistint_t list
+ * of a stack_t list
  *
  * @head: head of the list
  * @n: value of the element
  * Return: the address of the new element
  */
-stack_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	stack_t *, *new;
+	stack_t *h, *new;
+
+	h = (*head);
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
@@ -19,57 +21,50 @@ stack_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new->n = n;
 	new->next = NULL;
 
-	h = *head;
-
-	if (h != NULL)
-	{
-		while (h->next != NULL)
-			h = h->next;
-		h->next = new;
-	}
-	else
+	if (*head == NULL)
 	{
 		*head = new;
+		new->prev = NULL;
+		return (new);
 	}
-
-	new->prev = h;
-
+	while (h->next != NULL)
+		h = h->next;
+	h->next = new;
+	new->prev= h;
 	return (new);
 }
 
 /**
  * add_dnodeint - adds a new node at the beginning
- * of a dlistint_t list
+ * of a stack_t list
  *
  * @head: head of the list
  * @n: value of the element
  * Return: the address of the new element
  */
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+stack_t *add_dnodeint(stackt_t **head, const int n)
 {
-	dlistint_t *new;
-	dlistint_t *h;
+	stack_t *new;
 
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		return (NULL);
 
 	new->n = n;
 	new->prev = NULL;
-	h = *head;
+	
 
-	if (h != NULL)
+	if (head != NULL)
 	{
-		while (h->prev != NULL)
-			h = h->prev;
+		new->next = (*head);
+		if (*head != NULL)
+		{
+			(*head)->prev = new;
+		}
+		*head = new;
 	}
-
-	new->next = h;
-
-	if (h != NULL)
-		h->prev = new;
-
-	*head = new;
+	else
+		new->next = NULL;
 
 	return (new);
 }
@@ -83,15 +78,12 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 void free_dlistint(stack_t *head)
 {
-	stack_t *tmp;
-
-	if (head != NULL)
-		while (head->prev != NULL)
-			head = head->prev;
-
-	while ((tmp = head) != NULL)
+	stack_t *h;
+	
+	while (head)
 	{
-		head = head->next;
-		free(tmp);
+		h = head-> next;
+		free(head);
+		head = h;
 	}
 }
