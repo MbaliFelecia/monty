@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stderr.h>
 #include <unistd.h>
 #include <stddef.h>
 #include <string.h>
