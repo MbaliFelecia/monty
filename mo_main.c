@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 			f(&globe.head, globe.count_line);
 		}
 		free(globe.buff);
-		globe.buff = rd_line(bc_file);
+		globe.buff = rd_line(bytecode_file);
 		globe.count_line++;
 	}
 	trm_global();
