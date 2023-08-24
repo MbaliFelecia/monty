@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	file_status = ini_file(argc, argv);
 	if (file_status == 1)
 		exit(EXIT_FAILURE);
-	
+
 	bytecode_file = file_open(argv[1]);
 	if (bytecode_file == NULL)
 		exit(EXIT_FAILURE);
