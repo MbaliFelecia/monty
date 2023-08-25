@@ -26,7 +26,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 /**
  * rotl - rotates stack to flip to top
  * @stack: the head of the stack
- * @line _number: the number of line
+ * @line_number: the number of line
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
@@ -44,6 +44,11 @@ void rotl(stack_t **stack, unsigned int line_number)
 	(*stack)->prev->next = NULL;
 	(*stack)->prev = NULL;
 }
+/**
+ * pstr - prints the string of the stack
+ * @stack: the stack head
+ * @line_number: the line number
+ */
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current;
