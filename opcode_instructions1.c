@@ -104,13 +104,13 @@ void pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _swap - swaps the top two elements of the stack
+ * swap - swaps the top two elements of the stack
  *
  * @stack: head of the linked list
  * @line_number: line number
  * Return: no return
  */
-void _swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	int m = 0;
 	stack_t *tmp = NULL;

@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * get_opcodes - selects the correct opcode to perform
- * @opc: opcodee passed
+ * get_opcode - selects the correct opcode to perform
+ * @opc: opcode passed
  *
  * Return: pointer to the function which execites the opcode
  */
@@ -15,7 +15,7 @@ void (*get_opcode(char *opc))(stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"queue", queue},
 		{"stack", stack},
-		/*{"swap", swap}
+		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
@@ -25,7 +25,7 @@ void (*get_opcode(char *opc))(stack_t **stack, unsigned int line_number)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
-		{"rotr", rotr},*/
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	int i;
