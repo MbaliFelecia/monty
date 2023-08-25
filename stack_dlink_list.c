@@ -10,27 +10,25 @@
  */
 stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	stack_t *h, *new;
-
-	h = (*head);
-
+	stack_t *current, *new;
+	
+	current = (*head);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		return (NULL);
 
 	new->n = n;
 	new->next = NULL;
-
 	if (*head == NULL)
 	{
 		*head = new;
 		new->prev = NULL;
 		return (new);
 	}
-	while (h->next != NULL)
-		h = h->next;
-	h->next = new;
-	new->prev = h;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new;
+	new->prev = current;
 	return (new);
 }
 
@@ -78,12 +76,12 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 
 void free_dlistint(stack_t *head)
 {
-	stack_t *h;
+	stack_t *current;
 
 	while (head)
 	{
-		h = head->next;
+		current = head->next;
 		free(head);
-		head = h;
+		head = current;
 	}
 }
