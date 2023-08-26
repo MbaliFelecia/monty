@@ -11,7 +11,7 @@
 stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
 	stack_t *current, *new;
-	
+
 	current = (*head);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
