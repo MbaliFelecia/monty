@@ -16,7 +16,7 @@ void (*get_opcode(char *opc))(stack_t **stack, unsigned int line_number)
 		{"queue", queue},
 		{"stack", stack},
 		{"swap", swap},
-		{"add", add},
+		/*{"add", add},*/
 		{"nop", nop},
 		{"sub", sub},
 		{"mul", mul},
